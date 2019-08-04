@@ -1,5 +1,11 @@
 version: 1.0.{build}
 image: Visual Studio 2019
+environment:
+  matrix:
+    - mutation-test: false
+    - mutation-test: true
+matrix:
+  fast_finish: true
 install:
   dotnet tool install --global dotnet-stryker --version 0.12.0
 build:
