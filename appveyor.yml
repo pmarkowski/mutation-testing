@@ -10,4 +10,6 @@ test_script:
   dotnet test
 after_test:
   - cd XUnitTestProject1
-  - dotnet stryker
+  - dotnet stryker -r "['html','dots']"
+artifacts:
+  - path: '**\mutation-report.html'
