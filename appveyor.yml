@@ -1,15 +1,8 @@
 version: 1.0.{build}
 image: Visual Studio 2019
-install:
-  dotnet tool install --global dotnet-stryker --version 0.12.0
 build:
   verbosity: minimal
 build_script:
   dotnet build
 test_script:
   dotnet test
-after_test:
-  - cd XUnitTestProject1
-  - dotnet stryker -r "['html','dots']"
-artifacts:
-  - path: '**\mutation-report.html'
