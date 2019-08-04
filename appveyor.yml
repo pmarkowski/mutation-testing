@@ -6,6 +6,8 @@ environment:
     - mutation-test: true
 matrix:
   fast_finish: true
+  allow_failures:
+    - mutation-test: true
 install:
   dotnet tool install --global dotnet-stryker --version 0.12.0
 build:
